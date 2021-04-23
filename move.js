@@ -5,6 +5,11 @@
 			function move(obj,name,target) {
 				clearInterval(obj.timerA)
 				obj.timerA = setInterval(function() {
+					if(speed>0){
+						speed=math.ceil(speed)
+					}else{
+						speed=Math.floor(speed)
+					}
 					if (parseInt(getComputedStyle(obj)[name]) == target) {
 						clearInterval(obj.timerA)
 					} else {
