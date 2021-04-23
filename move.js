@@ -1,20 +1,19 @@
 
-			// var oDiv1=document.getElementById("box1")
-			// var oDiv2=document.getElementById("box2")
-			// let timerA
 			function move(obj,name,target) {
 				clearInterval(obj.timerA)
 				obj.timerA = setInterval(function() {
+					let nowSet=parseInt(getComputedStyle(obj)[name])
+					let speed=(target-nowSet)/10
 					if(speed>0){
-						speed=math.ceil(speed)
+						speed=Math.ceil(speed)
 					}else{
 						speed=Math.floor(speed)
 					}
-					if (parseInt(getComputedStyle(obj)[name]) == target) {
+					if (nowSet == target) {
 						clearInterval(obj.timerA)
 					} else {
-						var speed=(target-parseInt(getComputedStyle(obj)[name]))/10
-						obj.style[name] = parseInt(getComputedStyle(obj)[name]) + speed+ 'px'
+						// var speed=(target-nowSet)/10
+						obj.style[name] = nowSet + speed+ 'px'
 					}
 				}, 30)
 			}
