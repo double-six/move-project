@@ -1,4 +1,4 @@
-//move链式运动1.3
+//move链式运动1.22
 function move(obj, name, target, fn) {
 	clearInterval(obj.timerA)
 	obj.timerA = setInterval(function() {
